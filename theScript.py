@@ -15,4 +15,5 @@ text_body = extract_text("admission_list.pdf")
 # JAMB regnumber regex
 jamb_number_pattern = re.compile(r'\b\d{12}[A-Z]{2}\b')
 jamb_numbers = jamb_number_pattern.findall(text_body)
-print(json.dumps(jamb_numbers))
+# print(json.dumps(jamb_numbers))
+print(len(jamb_numbers))

@@ -14,28 +14,41 @@ jamb_numbers = jamb_number_pattern.findall(text_body)
 values = jamb_numbers
 
 # navigate to your browser with the UNN portal already opened to avoid writing excessive code to achieve that.
-
+values  = values[2408:]
 # Iterate over each value
+# pyautogui.sleep(10)
+
 for value in values:
-    pyautogui.sleep(20)
+    pyautogui.sleep(5)
 # These coordinates are based on my PC resolution. Please adjust to your own system
 # use this to get coordinates print(pyautogui.position())
 
-    pyautogui.click(1216, 1026, duration=1)
-    pyautogui.sleep(5)
+    pyautogui.click(1216, 1026)
+    pyautogui.sleep(1)
     pyautogui.write(value)
-    pyautogui.sleep(5)
-    pyautogui.click(1665, 1170, duration=1)
+    # pyautogui.sleep(1)
+    pyautogui.click(1665, 1170)
     # You can reduce every other sleep but this line require more time because of internet speed variation
-    pyautogui.sleep(30)
-    pyautogui.click(828, 1366, duration=1)
-    pyautogui.sleep(10)
-    pyautogui.click(2003, 1318, duration=1)
+    pyautogui.sleep(25)
+    
+    pyautogui.click(828, 1366)
+    pyautogui.sleep(5)
+    pyautogui.click(2003, 1318)
     # remember to set the print option to "print to pdf" before running this script
     # Also remember to set the destination of the download if you want
-    pyautogui.sleep(10)
+    pyautogui.sleep(1)
     pyautogui.write(value)
-    pyautogui.sleep(4)
-    pyautogui.click(905, 909, duration=1)
-    pyautogui.sleep(4)
-    pyautogui.click(39, 186, duration=1)
+    pyautogui.sleep(3)
+    pyautogui.click(905, 909)
+    pyautogui.sleep(2)
+
+    pyautogui.press('enter')
+    pyautogui.press('esc')
+    pyautogui.press('esc')
+
+    pyautogui.sleep(2)
+    pyautogui.click(300, 186)
+    pyautogui.write("https://unnportal.unn.edu.ng/putme_login")
+    pyautogui.press('enter')
+
+
