@@ -14,7 +14,7 @@ jamb_numbers = jamb_number_pattern.findall(text_body)
 values = jamb_numbers
 
 # navigate to your browser with the UNN portal already opened to avoid writing excessive code to achieve that.
-values  = values[2408:]
+values  = values[2488:]
 # Iterate over each value
 # pyautogui.sleep(10)
 
