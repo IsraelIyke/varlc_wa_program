@@ -14,9 +14,9 @@ jamb_numbers = jamb_number_pattern.findall(text_body)
 values = jamb_numbers
 
 # navigate to your browser with the UNN portal already opened to avoid writing excessive code to achieve that.
-values  = values[330:]
+values  = values[4616:]
 # Iterate over each value
-pyautogui.sleep(10)
+# pyautogui.sleep(10)
 
 for value in values:
     pyautogui.sleep(5)
@@ -26,10 +26,11 @@ for value in values:
     pyautogui.click(1216, 1026)
     pyautogui.sleep(1)
     pyautogui.write(value)
-    pyautogui.sleep(1)
+    # pyautogui.sleep(1)
     pyautogui.click(1665, 1170)
     # You can reduce every other sleep but this line require more time because of internet speed variation
-    pyautogui.sleep(50)
+    pyautogui.sleep(15)
+    
     pyautogui.click(828, 1366)
     pyautogui.sleep(5)
     pyautogui.click(2003, 1318)
@@ -37,7 +38,17 @@ for value in values:
     # Also remember to set the destination of the download if you want
     pyautogui.sleep(1)
     pyautogui.write(value)
-    pyautogui.sleep(2)
+    pyautogui.sleep(3)
     pyautogui.click(905, 909)
     pyautogui.sleep(2)
-    pyautogui.click(39, 186)
+
+    pyautogui.press('enter')
+    pyautogui.press('esc')
+    pyautogui.press('esc')
+
+    pyautogui.sleep(2)
+    pyautogui.click(300, 186)
+    pyautogui.write("https://unnportal.unn.edu.ng/putme_login")
+    pyautogui.press('enter')
+
+

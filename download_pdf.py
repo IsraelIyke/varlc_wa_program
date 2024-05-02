@@ -1,7 +1,7 @@
 import pyautogui
 from pdfminer.high_level import extract_pages, extract_text
 import re
-import sys 
+import sys, os
 
 text_body = extract_text("admission_list.pdf")
 #print(text_body)
@@ -12,13 +12,15 @@ jamb_number_pattern = re.compile(r'\b\d{12}[A-Z]{2}\b')
 jamb_numbers = jamb_number_pattern.findall(text_body)
 # Array of values to iterate over
 values = jamb_numbers
+files = os.listdir("./saved/1")
+trimmed_list = [s[:-4] for s in files]
 
+filtered_list = [item for item in values if item not in trimmed_list]
+print(len(filtered_list))
 # navigate to your browser with the UNN portal already opened to avoid writing excessive code to achieve that.
-values  = values[2488:]
-# Iterate over each value
-# pyautogui.sleep(10)
 
-for value in values:
+
+for value in filtered_list:
     pyautogui.sleep(5)
 # These coordinates are based on my PC resolution. Please adjust to your own system
 # use this to get coordinates print(pyautogui.position())
@@ -29,7 +31,7 @@ for value in values:
     # pyautogui.sleep(1)
     pyautogui.click(1665, 1170)
     # You can reduce every other sleep but this line require more time because of internet speed variation
-    pyautogui.sleep(25)
+    pyautogui.sleep(15)
     
     pyautogui.click(828, 1366)
     pyautogui.sleep(5)
