@@ -10,10 +10,10 @@ import re
 import sys
 import json
 
-text_body = extract_text("admission_list.pdf")
+text_body = extract_text("2023-2024-SHOPPING-LIST-FOR-UPLOAD.pdf")
 #print(text_body)
 # JAMB regnumber regex
 jamb_number_pattern = re.compile(r'\b\d{12}[A-Z]{2}\b')
 jamb_numbers = jamb_number_pattern.findall(text_body)
 # print(json.dumps(jamb_numbers))
-print((jamb_numbers.index("202330889411FA")))
+print(len(jamb_numbers))

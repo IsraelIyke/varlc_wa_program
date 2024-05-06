@@ -3,7 +3,7 @@ from pdfminer.high_level import extract_pages, extract_text
 import re
 import sys, os
 
-text_body = extract_text("admission_list.pdf")
+text_body = extract_text("2023-2024-SHOPPING-LIST-FOR-UPLOAD.pdf")
 #print(text_body)
 
 # JAMB regnumber regex
@@ -12,11 +12,11 @@ jamb_number_pattern = re.compile(r'\b\d{12}[A-Z]{2}\b')
 jamb_numbers = jamb_number_pattern.findall(text_body)
 # Array of values to iterate over
 values = jamb_numbers
-files = os.listdir("./saved/1")
+files = os.listdir("./saved/2")
 trimmed_list = [s[:-4] for s in files]
 
 filtered_list = [item for item in values if item not in trimmed_list]
-print(len(filtered_list))
+# print(len(filtered_list))
 # navigate to your browser with the UNN portal already opened to avoid writing excessive code to achieve that.
 
 
@@ -49,7 +49,7 @@ for value in filtered_list:
     pyautogui.press('esc')
 
     pyautogui.sleep(2)
-    pyautogui.click(300, 186)
+    pyautogui.click(1000, 186)
     pyautogui.write("https://unnportal.unn.edu.ng/putme_login")
     pyautogui.press('enter')
 

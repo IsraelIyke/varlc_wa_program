@@ -15,12 +15,12 @@ function parsePdf(filePath) {
   });
 }
 
-const pdfPath = "admission_list.pdf";
+const pdfPath = "2023-2024-SHOPPING-LIST-FOR-UPLOAD.pdf";
 
 // Call the parsePdf function
 parsePdf(pdfPath)
   .then((text) => {
-    fs.readdir("saved/1", (err, files) => {
+    fs.readdir("saved/2", (err, files) => {
       if (err) {
         console.error("Error reading folder:", err);
         return;
@@ -41,7 +41,7 @@ parsePdf(pdfPath)
 
         const fileNameWithoutExtension2 = pdfPath.replace(".pdf", "");
         const fileNameWithoutExtension = fileNameWithoutExtension2.replace(
-          "./saved/1/",
+          "./saved/2/",
           ""
         );
         let targetIdentifier = fileNameWithoutExtension;
@@ -68,7 +68,7 @@ parsePdf(pdfPath)
         let departmentStr = Department.join(" ");
 
         return {
-          Name: `${nameStr} from ${departmentStr}`,
+          Name: `Shopping ${nameStr} from ${departmentStr}`,
           Phone: `'${phoneL}`,
         };
       }
@@ -87,7 +87,7 @@ parsePdf(pdfPath)
         for (let i = 0; i < files.length; i++) {
           const fileNameWithoutExtension = files[i].replace(".pdf", "");
 
-          const pdfPath = `./saved/1/${fileNameWithoutExtension}.pdf`;
+          const pdfPath = `./saved/2/${fileNameWithoutExtension}.pdf`;
           let extractedData = await extractDataFromPDF(pdfPath);
           dataArray.push(extractedData);
         }
