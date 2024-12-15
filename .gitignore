@@ -1,5 +1,12 @@
 /node_modules
-/saved/1
+/saved
+/course
 /saved/2
 /excel
+/vcf_files
+/excel_files
+/merged_data.xlsx
+/merged_data2.xlsx
+/iterationsv2
 /iterations
+/__pycache__
