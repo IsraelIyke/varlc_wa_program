@@ -3,11 +3,11 @@ import re  # For sanitizing file names
 import os  # For directory management
 
 # File path and column to group by
-file_path = "2024-2025-PRIMARY-ADMISSION-LIST(1).xlsx"
+file_path = "2024-2025-ADVERT-SHOPPING-ADMISSION-LIST-FOR-UPLOAD.xlsx"
 column_to_group_by = "DEPARTMENT"
 
 # Define the output directory
-output_directory = "C:/Users/USER/Desktop/v-scraper/course/"
+output_directory = "C:/Users/USER/Desktop/v-data/course/"
 
 # Ensure the output directory exists
 if not os.path.exists(output_directory):

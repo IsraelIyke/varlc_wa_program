@@ -59,8 +59,9 @@ for subdir in os.listdir(main_dir):
                 
                 # Extract relevant information
                 Fullname = join_data_between_words(data_arrays, 'Fullname', 'Gender')
-                Department = join_data_between_words(data_arrays, 'Department', 'Score')
-                DepartmentTrimmed = Department[:-5] if Department else ""  # Trim the department as required
+                
+                # Use the folder name (subdir) as the department
+                DepartmentTrimmed = subdir if subdir else ""
 
                 # Extract phone or mobile information
                 Mobile = join_data_between_words(data_arrays, 'phone', 'Country')
@@ -73,7 +74,7 @@ for subdir in os.listdir(main_dir):
                     continue  # Skip this file if Fullname is empty
 
                 # Create the modified Fullname with DepartmentTrimmed and "2425"
-                modified_name = f"{Fullname} {DepartmentTrimmed} _2425"
+                modified_name = f"{Fullname} {DepartmentTrimmed} _AD2425"
 
                 # Create a new VCard object for each contact
                 vcard = vobject.vCard()

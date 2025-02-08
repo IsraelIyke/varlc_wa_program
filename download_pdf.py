@@ -4,7 +4,7 @@ import os
 import re
 
 # Load data from Excel file and extract the specified column as a list
-excel_file_path = "./2024-2025-PRIMARY-ADMISSION-LIST(1).xlsx"
+excel_file_path = "./2024-2025-ADVERT-SHOPPING-ADMISSION-LIST-FOR-UPLOAD.xlsx"
 column_name = "JAMB REG. NO."  # Replace with the actual column name in your Excel file
 df = pd.read_excel(excel_file_path)
 
@@ -37,7 +37,7 @@ for value in filtered_list:
     pyautogui.sleep(1)
     pyautogui.write(value)
     pyautogui.click(1665, 1170)
-    pyautogui.sleep(30)
+    pyautogui.sleep(15)
     
     pyautogui.click(828, 1366)
     pyautogui.sleep(4)
