@@ -7,18 +7,18 @@ import re
 # You get these coordinates by placing your mouse cursor to the points
 # you want the actions to take place and then run the coordinate.py program
 
-group_info_coord = (1372, 279)  # Position of the "Group Info" button
-add_member_coord = (1759, 1331)  # Position of "Add member" button
-first_contact_coord = (1241, 544)  # Position of the first contact in the list
-checkmark_coord = (1447, 1289)  # Position of the checkmark button (confirmation)
-final_coord = (1428, 878)  # Position of the final confirmation
+group_info_coord = (1372, 270)  # Position of the "Group Info" button
+add_member_coord = (1676, 1181)  # Position of "Add member" button
+first_contact_coord = (1256, 480)  # Position of the first contact in the list
+checkmark_coord = (1415, 1318)  # Position of the checkmark button (confirmation)
+final_coord = (1405, 856)  # Position of the final confirmation
 
 # This last 3 coordinates are for when the contact restricted people not saved in
 # their contact from adding their number to any group
 
-invite_coord = (1428, 878)  # Position of the "invite" button 
-message_coord = (1304, 817)  # Position of the message input field
-send_message_coord = (1466, 928)  # Position of the send message button
+invite_coord = (1405, 856)  # Position of the "invite" button 
+message_coord = (1294, 820)  # Position of the message input field
+send_message_coord = (1430, 899)  # Position of the send message button
 
 # Function to extract names from VCF file
 def extract_contacts_from_vcf(vcf_file):
@@ -61,52 +61,52 @@ def add_contact_to_group(contact_name):
         # Click "Add Member"
         pyautogui.moveTo(*add_member_coord)
         pyautogui.click()
-        time.sleep(2)
+        time.sleep(5)
 
         # Type Contact Name
         pyautogui.write(contact_name)
-        time.sleep(2)
+        time.sleep(5)
 
 # I commented the codes below to ensure testing without actually adding the members
 
         # Select First Contact
-        # pyautogui.moveTo(*first_contact_coord)
-        # pyautogui.click()
-        # time.sleep(2)
+        pyautogui.moveTo(*first_contact_coord)
+        pyautogui.click()
+        time.sleep(2)
 
-        # # Click Checkmark Button to Confirm
-        # pyautogui.moveTo(*checkmark_coord)
-        # pyautogui.click()
-        # time.sleep(3)
+        # Click Checkmark Button to Confirm
+        pyautogui.moveTo(*checkmark_coord)
+        pyautogui.click()
+        time.sleep(3)
 
-        # # Final Confirmation
-        # pyautogui.moveTo(*final_coord)
-        # pyautogui.click()
-        # time.sleep(3)
+        # Final Confirmation
+        pyautogui.moveTo(*final_coord)
+        pyautogui.click()
+        time.sleep(3)
 
-        # # Invite
-        # pyautogui.moveTo(*invite_coord)
-        # pyautogui.click()
-        # time.sleep(3)
+        # Invite
+        pyautogui.moveTo(*invite_coord)
+        pyautogui.click()
+        time.sleep(3)
 
-        # # Edit the message before final confirmation
-        # pyautogui.moveTo(*message_coord)
-        # pyautogui.click()
-        # time.sleep(1)
+        # Edit the message before final confirmation
+        pyautogui.moveTo(*message_coord)
+        pyautogui.click()
+        time.sleep(1)
 
-        # pyautogui.hotkey('ctrl', 'a')  # Select all text
-        # time.sleep(1)
+        pyautogui.hotkey('ctrl', 'a')  # Select all text
+        time.sleep(1)
 
-        # pyautogui.press('backspace')  # Delete selected text
-        # time.sleep(1)
+        pyautogui.press('backspace')  # Delete selected text
+        time.sleep(1)
 
-        # pyautogui.write("Varlc group")  # Type new text
-        # time.sleep(1)
+        pyautogui.write("Congratulations on your admission to UNN.  Join this group to connect with your classmates  and get all information you need about lectures and settling down.", interval=0.1)  # Type new text
+        time.sleep(1)
 
-        # # Send Message
-        # pyautogui.moveTo(*send_message_coord)
-        # pyautogui.click()
-        # time.sleep(3)
+        # Send Message
+        pyautogui.moveTo(*send_message_coord)
+        pyautogui.click()
+        time.sleep(3)
 
         pyautogui.press('esc')
 
@@ -118,7 +118,7 @@ def add_contact_to_group(contact_name):
 if contacts:
     for contact in contacts:
         add_contact_to_group(contact)
-        sleep_time = random.randint(10, 30)  # Random wait time between actions
+        sleep_time = random.randint(20, 50)  # Random wait time between actions
         print(f"Sleeping for {sleep_time} seconds before adding the next contact...")
         time.sleep(sleep_time)
 else:
